@@ -1,0 +1,21 @@
+inicio
+	inteiro a
+	inteiro b
+	inteiro c
+	a <- 0
+	b <- 0
+	c <- 0
+	a <- 0
+	b <- 0
+	c <- 0
+	a <- 0
+	b <- 1
+	c <- 1
+	enquanto c <= 300 faz
+		c <- a + b
+		a <- b
+		b <- c
+		escrever "\n" , b
+		c <- c + 1
+	fimenquanto
+fim

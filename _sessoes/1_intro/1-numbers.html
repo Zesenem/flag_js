@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScrypt - Intro</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <h1> JS - Numbers</h1>
+    <main>
+        <section id="output">
+            
+
+        </section>
+    </main> 
+    
+    <script>
+        console.log('Hello World');
+
+        // primitive data - numbers
+
+        var currentYear // variable
+        let birthDate = 1980 // variable with declaration
+        let age, result, x = 15, y = 4; // multiple variable
+
+        currentYear = 2025 // assign value to variable
+
+        age = currentYear - birthDate // Operation
+
+        // Operators
+
+        result = x + y // addition
+
+        result = x - y // subtraction
+
+        result = x * y // multiplication
+
+        result = x / y // division
+
+        result = x % y // remainder
+
+        result = x ** y // exponentiation
+
+
+        // Increases and decreases
+
+        x = x + 1 // increase
+        console.log(x)
+        x += 1 // increase
+        console.log(x)
+        x += 5 // increase
+        console.log(x)
+        x ++ // increase
+        console.log(x)
+        x -- // decrease
+        console.log(x)
+
+        x -= 5; // decrease
+        console.log(x)
+
+        x *= 3; // multiplication
+        console.log(x)
+
+        result = (2 + 3) * 4 // precedence
+        console.log(result)
+
+        console.log(x ++)   // post-increment
+        console.log(x)
+        
+        console.log(++ x)   // pre-increment
+        console.log(x)
+
+
+        
+
+        // write to the document
+
+        let output = document.getElementById('output');
+        output.innerHTML = x;
+
+    </script>
+</body>
+</html>

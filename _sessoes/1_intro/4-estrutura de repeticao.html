@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <h1> JS - </h1>
+    <main>
+        <section id="output">
+            
+
+        </section>
+    </main> 
+    
+    <script>
+
+        // Estrutura de Repetição
+
+        let text = '';
+
+        // FOR
+
+         let i = 0;
+        
+        for (i ; i <= 10 ; i++) {
+            text += `<p> ${i} </p>`;
+        }
+
+        // for (i ; i >= 10 ; i--) {
+        //     text += `<p> ${i} </p>`;
+        // }
+
+
+        // WHILE
+
+
+        // i = 0;
+
+        // while (i <= 10) {
+        //     text += `<p> ${i} </p>`;
+        //     i++;
+        // }
+
+        // DO WHILE
+
+        // i = 0;
+
+        // do {
+        //     text += `<p> ${i} </p>`;
+        //     i++;
+        // } while (i <= 10);
+
+        let output = document.getElementById("output");
+        output.innerHTML = text;
+
+    </script>
+</body>
+</html>

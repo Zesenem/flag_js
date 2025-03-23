@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <h1> JS - Exercicio </h1>
+    <main>
+        <section id="output">
+            
+
+        </section>
+    </main> 
+    
+    <script>
+
+        // Square Sum
+
+        let base1 = Number(prompt("Digite a base 1"));
+        let base2 = Number(prompt("Digite a base 2"));
+        let height = Number(prompt("Digite a altura"));
+        
+        let area = ((base1 + base2) * height) / 2;
+
+
+        const resultsHTML = `<p><strong>Area of the Trapeze:</strong> ${area}</p>`;
+
+        document.getElementById("output").innerHTML = resultsHTML;
+
+        
+
+    </script>
+</body>
+</html>

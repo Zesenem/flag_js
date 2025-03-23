@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>JS - Exercicio</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+
+    <script>
+      // Divisible by 2 and 3
+      let num1 = Number(prompt("Digite o primeiro número"));
+      let num2 = Number(prompt("Digite o segundo número"));
+      let num3 = Number(prompt("Digite o terceiro número"));
+      let num4 = Number(prompt("Digite o quarto número"));
+      let output = document.getElementById("output");
+
+      if (num1 % 2 == 0) {
+        if (num1 % 3 == 0) {
+          output.innerHTML += `<p><strong>Divisível por 2 e 3:</strong> ${num1}</p>`;
+        } else {
+          output.innerHTML += `<p><strong>Não é divisível por 2 e 3:</strong> ${num1}</p>`;
+        }
+      }
+
+      if (num2 % 2 == 0) {
+        if (num2 % 3 == 0) {
+          output.innerHTML += `<p><strong>Divisível por 2 e 3:</strong> ${num2}</p>`;
+        } else {
+          output.innerHTML += `<p><strong>Não é divisível por 2 e 3:</strong> ${num2}</p>`;
+        }
+      }
+
+      if (num3 % 2 == 0) {
+        if (num3 % 3 == 0) {
+          output.innerHTML += `<p><strong>Divisível por 2 e 3:</strong> ${num3}</p>`;
+        } else {
+          output.innerHTML += `<p><strong>Não é divisível por 2 e 3:</strong> ${num3}</p>`;
+        }
+      }
+
+      if (num4 % 2 == 0) {
+        if (num4 % 3 == 0) {
+          output.innerHTML += `<p><strong>Divisível por 2 e 3:</strong> ${num4}</p>`;
+        } else {
+          output.innerHTML += `<p><strong>Não é divisível por 2 e 3:</strong> ${num4}</p>`;
+        }
+      }
+    </script>
+  </body>
+</html>

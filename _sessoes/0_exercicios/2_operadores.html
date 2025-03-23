@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>JS - Exercicio</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+
+    <script>
+      //exercicio 2
+
+      let num1 = Number(prompt("Digite um número"));
+      let num2 = Number(prompt("Digite outro número"));
+
+      let sum = num1 + num2;
+      let sub = num1 - num2;
+      let multi = num1 * num2;
+      let div = num1 / num2;
+
+      const resultsHTML = `
+        
+        <p><strong>Sum:</strong> ${sum}</p>
+        <p><strong>Subtraction:</strong> ${sub}</p>
+        <p><strong>Multiplication:</strong> ${multi}</p>
+        <p><strong>Division:</strong> ${div}</p>`;
+
+      document.getElementById("output").innerHTML = resultsHTML;
+    </script>
+  </body>
+</html>

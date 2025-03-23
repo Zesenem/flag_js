@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScrypt - Intro</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <h1> JS - Strings</h1>
+    <main>
+        <section id="output">
+            
+
+        </section>
+    </main> 
+    
+    <script>
+        console.log('Hello World');
+
+        let name = 'John '; // string
+        let surName = 'Doe'; // string
+        let nationality = `American`; // string
+
+
+        // ES5 - Template String
+        let fullName = name + '' + surName; // concatenation
+        console.log(fullName);
+
+        let phrase = 'My name is ' + name + ' ' + surName + ' and I am ' + 'Programming in JavaScript';
+
+
+        // ES6 - Template String
+        let fullName2 = `${name} ${surName}`; // concatenation
+        console.log(fullName2);
+
+        let text = `
+            <h1> ${ 'Hello' + fullName} </h1>
+            <p> Character Length: ${fullName.length} </p>
+            <p> ${fullName.toUpperCase()} </p>
+            <p> ${fullName.toLowerCase()} </p>
+            <p> ${fullName[0]} </p>
+            <p> ${fullName.indexOf('D')} </p>
+            <p> ${fullName.lastIndexOf('D')} </p>
+            <p> ${fullName.charAt(2)} </p>
+            <p> ${fullName.endsWith('e')} </p>
+            <p> ${fullName.includes('D')} </p>
+
+        
+        `;
+        
+        let phrase2 = `
+        <h2> My name is ${name} ${surName} </h2>
+        <h2> and I am Programming in JavaScript </h2>
+        <hr>`;
+
+        let output = document.getElementById('output');
+        // output.innerHTML = fullName2;
+        output.innerHTML = phrase2;
+        output.innerHTML = text;
+
+    </script>
+</body>
+</html>

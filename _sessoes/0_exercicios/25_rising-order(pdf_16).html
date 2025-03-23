@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <h1> JS - Exercicio </h1>
+    <main>
+        <section id="output">
+            
+
+        </section>
+    </main> 
+    
+    <script>
+
+
+        // Rising Order
+
+        let num1 = Number(prompt("Digite o primeiro número"));
+
+        let num2 = Number(prompt("Digite o segundo número"));
+
+        let num3 = Number(prompt("Digite o terceiro número"));
+
+        if ( num1 < num2 && num1 < num3 ) {
+            if ( num2 < num3) {
+                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num1}, ${num2}, ${num3} </p>`;
+            } else {
+                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num1}, ${num3}, ${num2} </p>`;
+            }
+        } else if ( num2 < num1 && num2 < num3) {
+            if ( num1 < num3) {
+                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num2}, ${num1}, ${num3} </p>`;
+            } else {
+                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num2}, ${num3}, ${num1} </p>`;
+            }
+        } else if ( num3 < num1 && num3 < num2) {
+            if ( num1 < num2) {
+                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num3}, ${num1}, ${num2} </p>`;
+            } else {
+                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num3}, ${num2}, ${num1} </p>`;
+            }
+        }
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>JS - Boolean</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+    <script>
+      // Boolean Values
+      // Operators
+      // <, > <=, >=, ==, ===, !=, !==
+      // && || !  (AND, OR, NOT)
+
+      // IF / ELSE
+      // let money = 1000;
+
+      // if (money > 700) {
+      //     console.log('Vamos sair para jantar');
+      // } else if (money > 300) {
+      //     console.log('Vamos ao cinema');
+      // } else {
+      //     console.log('get a job')
+      // }
+
+      // ? : (Ternary Operator)
+
+      // (condition) ? if true : if false
+      // let result = (money > 700) ? 'Vamos sair para jantar' : 'Vamos ao cinema';
+
+      // Comparison
+
+      money2 = 600;
+      let date = "Fathers day";
+
+      if (money2 > 700 && date == "Fathers day") {
+        console.log("Vamos sair para jantar");
+      } else if (money2 > 300 || date == "Fathers day") {
+        console.log("Vamos ao cinema");
+      } else {
+        console.log("get a job");
+      }
+
+      // boolean algebra
+
+      // T && T = T
+      // T && F = F
+      // F && T = F
+
+      // T || T = T
+      // T || F = T
+      // F || T = T
+
+      // Switch
+
+      let language = prompt("What is your favorite programming language?");
+
+      switch (language) {
+        case "Python":
+          answer = "Python is a great language";
+          break;
+        case "JavaScript":
+          answer = "Javascript is a great language";
+          break;
+        case "Java":
+          answer = "Java is a great language";
+          break;
+        default:
+          answer = "No Defined Language";
+      }
+
+      // Logical
+      // Conditional
+
+      let output = document.getElementById("output");
+      output.innerHTML = answer;
+    </script>
+  </body>
+</html>
