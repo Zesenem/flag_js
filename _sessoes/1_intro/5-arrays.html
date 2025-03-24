@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>JS -</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+
+    <script>
+      // Arrays
+
+      let sampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      // Changing specific elements in the array
+      sampleArray[0] = "Antonio";
+      sampleArray[9] = "Menezes";
+      console.log(sampleArray);
+      console.log(sampleArray.length);
+      console.log(sampleArray[sampleArray.length - 1]);
+      console.log(sampleArray[0]);
+
+      // Array methods
+
+      // push() - Adds an element to the end of the array
+      sampleArray.push(11);
+      console.log(sampleArray);
+
+      // pop() - Removes the last element from the array
+      sampleArray.pop();
+      console.log(sampleArray);
+
+      // unshift() - Adds an element to the beginning of the array
+      sampleArray.unshift(0);
+      console.log(sampleArray);
+
+      // shift() - Removes the first element from the array
+      sampleArray.shift();
+      console.log(sampleArray);
+
+      // splice() - Adds or removes elements from the array
+      sampleArray.splice(5, 0, 5.5);
+      console.log(sampleArray);
+
+      // concat() - Concatenates arrays
+      let additionalArray = [11, 12, 13, 14, 15];
+
+      let combinedArray = sampleArray.concat(additionalArray);
+      console.log(combinedArray);
+
+      // Copy by Value
+      let initialNumber = 1;
+
+      let copiedNumber = initialNumber;
+
+      let outputContent = `<br> initialNumber: ${initialNumber}`;
+      outputContent += `<br> copiedNumber: ${copiedNumber}`;
+
+      let numberArray = [1, 2, 3, 4, 5];
+      outputContent += `<hr>`;
+      outputContent += `<br> numberArray: ${numberArray}`;
+
+      let referenceArray = numberArray;
+      outputContent += `<br> referenceArray: ${referenceArray}`;
+
+      // Pushing new value to the reference array
+      referenceArray.push(15);
+      outputContent += `<br> referenceArray after push: ${referenceArray}`;
+
+      // Clone Arrays
+
+      // Using the spread operator
+      let clonedArray = [...numberArray];
+      outputContent += `<hr>`;
+      outputContent += `<br> clonedArray: ${clonedArray}`;
+
+      // Using the slice method
+      let slicedArray = numberArray.slice();
+      outputContent += `<br> slicedArray: ${slicedArray}`;
+
+      // Using the concat method
+      let concatedArray = [].concat(numberArray);
+      outputContent += `<br> concatedArray: ${concatedArray}`;
+
+      // Using the from method
+      let fromArray = Array.from(numberArray);
+      outputContent += `<br> fromArray: ${fromArray}`;
+
+      let newstudents = [];
+
+      let numberOfGroups = 3;
+
+      // Adding new students to the array loop
+
+      for (let index = 0; index < numberOfGroups; index++) {
+        for (let i = 0; i < 2; i++) {
+          let studentName = prompt("Enter student name");
+          newstudents.push(studentName);
+        }
+      }
+      console.log(newstudents);
+
+      let newsstudents = [];
+
+      let class = [
+        ["Antonio", "Menezes"],
+        ["João", "Silva"],
+        ["Maria", "Santos"],
+      ];
+
+      for (let newsstudents of class) 
+
+      // Display everything on the page
+      let outputElement = document.getElementById("output");
+      outputElement.innerHTML += outputContent;
+    </script>
+  </body>
+</html>
