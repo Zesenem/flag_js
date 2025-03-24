@@ -19,7 +19,7 @@
       let output = document.getElementById("output");
 
       let student = prompt("Enter the student's name:");
-      let numClasses = parseInt(prompt("How many classes did the student take?"));
+      let numClasses = Number(prompt("How many classes did the student take?"));
 
       let classes = [];
       let grades = [];
@@ -28,7 +28,7 @@
 
       for (let i=0 ; i < numClasses ; i++) {
         classes.push(prompt(`Enter the name of class ${i+1}`));
-        grades.push(parseFloat(prompt(`Enter the grade of class ${i+1}`)));
+        grades.push(Number(prompt(`Enter the grade of class ${i+1}`)));
         total += grades[i];
       }
 
