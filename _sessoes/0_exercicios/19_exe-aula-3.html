@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
-</head>
-<body>
-    <h1> JS - Exercicio </h1>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>JS - Exercicio</h1>
     <main>
-        <section id="output">
-            
+      <section id="output"></section>
+    </main>
 
-        </section>
-    </main> 
-    
     <script>
+      // Guessing Game
 
+      let number = Math.round(Math.random() * 20);
 
-        // Guessing Game
+      let guess = Number(prompt("guess the number between 0 and 20"));
 
-        let number = Math.round(Math.random() * 20);
+      let attempts = 1;
 
-        let guess = Number(prompt('guess the number between 0 and 20'));
+      let attemptsNumber = [guess];
 
-        let attempts = 1;
-
-        while (guess != number)
-        {
-            if (guess > number)
-            {
-                guess = Number(prompt('Too high! Try again'));
-                attempts++
-            }
-            else
-            {
-                guess = Number(prompt('Too low! Try again'));
-                attempts++
-            }
+      while (guess !== number) {
+        if (guess > number) {
+          guess = Number(prompt("Too high! Try again"));
+        } else {
+          guess = Number(prompt("Too low! Try again"));
         }
+        attemptsNumber.push(guess);
+        attempts++;
+      }
 
-        document.getElementById("output").innerHTML = `<p><strong>Number:</strong> ${number} </p> <p><strong>Attempts:</strong> ${attempts} </p>`;
-
+      document.getElementById(
+        "output"
+      ).innerHTML = `<p><strong>Number:</strong> ${number} </p> <p><strong>Attempts:</strong> ${attempts} </p> <p><strong>Attempts:</strong> ${attemptsNumber} </p>`;
     </script>
-</body>
+  </body>
 </html>

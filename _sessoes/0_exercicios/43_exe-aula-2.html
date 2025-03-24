@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>JS - Exercicio</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+
+    <script>
+
+      // Grading system
+
+      let output = document.getElementById("output");
+
+      let student = prompt("Enter the student's name:");
+      let numClasses = parseInt(prompt("How many classes did the student take?"));
+
+      let classes = [];
+      let grades = [];
+      let total = 0;
+
+
+      for (let i=0 ; i < numClasses ; i++) {
+        classes.push(prompt(`Enter the name of class ${i+1}`));
+        grades.push(parseFloat(prompt(`Enter the grade of class ${i+1}`)));
+        total += grades[i];
+      }
+
+      let average = total / numClasses;
+
+      output.innerHTML = `<p><strong>Student:</strong> ${student}</p>`;
+      output.innerHTML += `<p><strong>Classes:</strong> ${classes}</p>`;
+      output.innerHTML += `<p><strong>Grades:</strong> ${grades}</p>`;
+      output.innerHTML += `<p><strong>Average:</strong> ${average}</p>`;
+
+      if (average >= 10) {
+        output.innerHTML += `<p><strong>Status:</strong> Approved</p>`;
+      } else {
+        output.innerHTML += `<p><strong>Status:</strong> Disapproved</p>`;
+      }
+
+    </script>
+  </body>
+</html>
