@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <style>
+      /* Help with Chatgpt for Display */
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        margin: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+        max-width: 600px;
+        margin: auto;
+      }
+      .box {
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Squares of Numbers (15 to 200)</h2>
+    <section id="output" class="grid"></section>
+
+    <script>
+      const output = document.getElementById("output");
+
+      for (let i = 15; i <= 200; i++) {
+        let box = document.createElement("div");
+        box.className = "box";
+        box.innerHTML = `<strong>${i}²</strong>: ${i * i}`;
+        output.appendChild(box);
+      }
+    </script>
+  </body>
+</html>

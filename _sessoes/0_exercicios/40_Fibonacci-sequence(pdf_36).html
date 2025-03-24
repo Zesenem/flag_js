@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <h1> JS - Exercicio </h1>
+    <main>
+        <section id="output">
+            
+
+        </section>
+    </main> 
+    
+    <script>
+
+        // Fibonacci sequence
+
+        let output = document.getElementById('output');
+
+        let n1 = 0;
+
+        let n2 = 1;
+
+        let i = 1;
+
+        for ( i = 1; i <= 15; i++)
+        {
+            output.innerHTML += `<p>${n1}</p>`;
+            let fib = n1 + n2;
+            n1 = n2;
+            n2 = fib;
+        }
+   
+      </script>
+      
+</body>
+</html>

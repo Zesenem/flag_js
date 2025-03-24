@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>JS - Exercicio</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+
+    <script>
+      // Sum of even numbers from 1 to 500
+
+      let output = document.getElementById("output");
+
+      let sum = 0;
+
+      for (let i = 1; i <= 500; i++) {
+        if (i % 2 === 0) {
+          output.innerHTML += `<p><strong>Sum:</strong> ${sum} </p>`;
+          sum += i;
+        }
+      }
+
+      // output.innerHTML = `<p><strong>Sum:</strong> ${sum} </p>`;
+
+    </script>
+  </body>
+</html>
