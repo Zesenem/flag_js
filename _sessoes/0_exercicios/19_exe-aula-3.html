@@ -13,29 +13,34 @@
     </main>
 
     <script>
-      // Guessing Game
+      // Guessing Game Function
 
-      let number = Math.round(Math.random() * 20);
+      function guessingGame() {
+        let number = Math.round(Math.random() * 20);
 
-      let guess = Number(prompt("guess the number between 0 and 20"));
+        let guess = Number(prompt("guess the number between 0 and 20"));
 
-      let attempts = 1;
+        let attempts = 1;
 
-      let attemptsNumber = [guess];
+        let attemptsNumber = [guess];
 
-      while (guess !== number) {
-        if (guess > number) {
-          guess = Number(prompt("Too high! Try again"));
-        } else {
-          guess = Number(prompt("Too low! Try again"));
+        while (guess !== number) {
+          if (guess > number) {
+            guess = Number(prompt("Too high! Try again"));
+          } else {
+            guess = Number(prompt("Too low! Try again"));
+          }
+          attemptsNumber.push(guess);
+          attempts++;
         }
-        attemptsNumber.push(guess);
-        attempts++;
+
+        document.getElementById(
+          "output"
+        ).innerHTML = `<p><strong>Number:</strong> ${number} </p> <p><strong>Attempts:</strong> ${attempts} </p> <p><strong>Attempts:</strong> ${attemptsNumber} </p>`;
       }
 
-      document.getElementById(
-        "output"
-      ).innerHTML = `<p><strong>Number:</strong> ${number} </p> <p><strong>Attempts:</strong> ${attempts} </p> <p><strong>Attempts:</strong> ${attemptsNumber} </p>`;
+      guessingGame();
+      
     </script>
   </body>
 </html>
