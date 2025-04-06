@@ -1,19 +1,17 @@
+// add element
 
-let lista = document.querySelector('ul');
+const ul = document.querySelector('ul');
+const li = document.createElement('li');
+li.textContent = 'four';   
 
-/// acrescentar um li no final da lista
+// add element to li
 
-// 1- criar o li
-let itemFim = document.createElement('li');
-// 2- criar texto para o li
-itemFim.textContent = 'Bananas';
-// 3- acrescentar a lista
-lista.append(itemFim);
-
-
-/// acrescentar item no inicio da lista
-let itemInicio = document.createElement('li');
-itemInicio.textContent = 'item inicio';
-lista.insertBefore(itemInicio, lista.firstElementChild);
-
-lista.append(itemInicio)
+li.className = 'cool';
+li.id = 'four';
+li.setAttribute('data-type', 'new');
+ul.appendChild(li);
+console.log(ul.lastElementChild);
+console.log(ul.firstElementChild);
+console.log(ul.children[1]);
+console.log(ul.childNodes[1]);
+console.log(ul.childNodes[3]);

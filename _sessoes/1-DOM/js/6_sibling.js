@@ -1,11 +1,7 @@
-
 let item2 = document.querySelector('#two');
 
-//item anterior
-let itemAnterior = item2.previousElementSibling;
-//let itemAnterior = item2.previousSibling;
-itemAnterior.className = 'cool';
+let previousItem = item2.previousElementSibling;
+previousItem.className = 'cool';
 
-// item seguinte
-let itemSeguinte = item2.nextElementSibling;
-itemSeguinte.className = 'complete';
+let nextItem = item2.nextElementSibling;
+nextItem.className = 'complete';
