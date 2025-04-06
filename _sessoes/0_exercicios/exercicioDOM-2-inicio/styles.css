@@ -20,11 +20,10 @@ h1 {
   margin-bottom: 20px;
 }
 
-section {
+#book-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px;
-  padding: 10px;
 }
 
 section li {
