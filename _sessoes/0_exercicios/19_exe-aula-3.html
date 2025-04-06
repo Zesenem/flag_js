@@ -12,10 +12,14 @@
       <section id="output"></section>
     </main>
 
+    <script src="../1_intro/js/library.js"></script>
+
     <script>
       // Guessing Game
 
-      let number = Math.round(Math.random() * 20);
+      function guessGame() {
+
+      let number = randomInt (0, 20);
 
       let guess = Number(prompt("guess the number between 0 and 20"));
 
@@ -36,6 +40,13 @@
       document.getElementById(
         "output"
       ).innerHTML = `<p><strong>Number:</strong> ${number} </p> <p><strong>Attempts:</strong> ${attempts} </p> <p><strong>Attempts:</strong> ${attemptsNumber} </p>`;
+
+    }
+
+    guessGame();
+
+
+
     </script>
   </body>
 </html>

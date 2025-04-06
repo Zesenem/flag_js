@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>JS -</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+
+    <script>
+      // Objects
+
+      // Os objetos são estruturas de dados que permitem armazenar dados em pares de chave-valor. Eles são muito úteis para organizar e manipular dados complexos em JavaScript.
+
+      // Os objetos são uma das principais características do JavaScript e são usados em quase todos os aplicativos JavaScript. Eles podem ser usados para representar qualquer coisa, desde um simples par de chave-valor até estruturas de dados complexas, como árvores e grafos.
+
+      // Criando um objeto
+
+      let person = {
+        name: "John",
+        age: 30,
+        city: "New York",
+      };
+
+      // Acessando propriedades de um objeto
+
+      console.log(person.name); // John
+      console.log(person["age"]); // 30
+      console.log(person.city); // New York
+
+      // Adicionando propriedades a um objeto
+
+      person.country = "USA";
+      console.log(person.country); // USA
+
+      // Removendo propriedades de um objeto
+      delete person.city;
+      console.log(person.city); // undefined
+
+      // Iterando sobre as propriedades de um objeto
+      for (let key in person) {
+        console.log(key + ": " + person[key]);
+      }
+
+      // Métodos de um objeto
+
+      let car = {
+        brand: "Toyota",
+        model: "Corolla",
+        year: 2020,
+        start: function () {
+          console.log("Car started");
+        },
+      };
+
+      console.log(car.brand); // Toyota
+      console.log(car["model"]); // Corolla
+      console.log(car.year); // 2020
+      car.start(); // Car started
+
+      // Objetos aninhados
+      let student = {
+        name: "Alice",
+        age: 20,
+        subjects: {
+          math: 90,
+          english: 85,
+          science: 95,
+        },
+      };
+
+      console.log(student); // Alice
+
+      // -----------------------------------------------------
+
+      const hotel = {
+        name: "Hotel California",
+        rooms: 100,
+        booked: 50,
+        pool: true,
+        typeOfRoom: ["single", "double", "suite"],
+        amenities: {
+          wifi: true,
+          breakfast: true,
+          parking: false,
+        },
+        checkAvailability: function () {
+          // do not use arrow functions here due to arrow functions going for the overall scope of the script instead of looking into the object with this.(var inside object)
+          // this refers to the object itself
+          return this.rooms - this.booked;
+        },
+        bookRoom: function () {
+          if (this.checkAvailability() > 0) {
+            this.booked++;
+            console.log("Room booked successfully!");
+          } else {
+            console.log("No rooms available.");
+          }
+        },
+      };
+
+      console.log(hotel.checkAvailability());
+    </script>
+  </body>
+</html>

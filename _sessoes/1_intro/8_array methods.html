@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <h1>JS -</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+    <script>
+      // Array Methods
+
+      // Os métodos de array são funções que permitem manipular arrays de forma mais fácil e eficiente. Eles incluem métodos como map, filter, reduce, forEach, find, some, every, etc.
+      // Esses métodos são muito úteis para trabalhar com dados em JavaScript e podem ajudar a tornar seu código mais legível e conciso.
+
+      // map
+
+      let nums = [1, 2, 3, 4, 5];
+
+      // without map function
+
+      let doubles = [];
+      for (let i = 0; i < nums.length; i++) {
+        //codigo com uma abordagem imperativa
+        doubles[i] = nums[i] * 2;
+      }
+
+      let triples = [];
+      for (const num of nums) {
+        triples.push(num * 3);
+      }
+
+      let quads = [];
+      nums.forEach((num) => {
+        quads.push(num * 4);
+      });
+
+      let squares = [];
+      for (let i = 0; i < nums.length; i++) {
+        squares[i] = nums[i] * nums[i];
+      }
+
+      // with map function - callback function
+
+      let doubles2 = nums.map((num) => num * 2); //codigo com uma abordagem declarativa
+      let triples2 = nums.map((num) => num * 3);
+      let quads2 = nums.map((num) => num * 4);
+      let squares2 = nums.map((num) => num ** 2);
+
+      // filter
+
+      // without filter
+
+      let evens = [];
+      for (let i = 0; i < nums.length; i++) {
+        if (nums[i] % 2 === 0) {
+          evens.push(nums[i]);
+        }
+      }
+
+      let odds = [];
+      for (const num of nums) {
+        if (num % 2 !== 0) {
+          odds.push(num);
+        }
+      }
+
+      let beer = ["Super Bock", "Sagres", "Heineken", "Carlsberg"];
+
+      console.log(beer);
+
+      // with filter
+
+      let evens2 = nums.filter((num) => num % 2 === 0); //codigo com uma abordagem declarativa
+      let odds2 = nums.filter((num) => num % 2 !== 0);
+
+      let beer2 = beer.filter((beer) => (beer.length > 7)); //codigo com uma abordagem declarativa
+
+      let beerWithoutSagres = beer.filter((beer) => beer !== "Sagres"); //codigo com uma abordagem declarativa
+      console.log(beerWithoutSagres)
+
+      // map, filter, reduce, forEach, find, some, every - better for performance than using loop for iteration
+
+      let output = document.getElementById("output");
+      output.innerHTML += "<h2>Array Methods</h2>";
+      output.innerHTML += `<p> Nums: ${nums} </p>`;
+      output.innerHTML += `<p> Doubles: ${doubles} </p>`;
+      output.innerHTML += `<p> Triples: ${triples} </p>`;
+      output.innerHTML += `<p> Quads: ${quads} </p>`;
+      output.innerHTML += `<p> Squares: ${squares} </p>`;
+      output.innerHTML += `<p> Evens: ${evens} </p>`;
+      output.innerHTML += `<p> Odds: ${odds} </p>`;
+
+      output.innerHTML += `<p> Beer: ${beer} </p>`;
+      output.innerHTML += `<p> Beer: ${beer2} </p>`;
+      output.innerHTML += `<p> Beer Without Sagres: ${beerWithoutSagres} </p>`;
+
+      // output.innerHTML += "<h3>map</h3>";
+      // output.innerHTML += "<p>O método map() cria um novo array com os resultados da chamada de uma função para cada elemento do array original.</p>";
+      // output.innerHTML += "<p>Exemplo:</p>";
+      // output.innerHTML += "<pre>let nums = [1, 2, 3, 4, 5];<br>let squares = nums.map(num => num * num);<br>console.log(squares); // [1, 4, 9, 16, 25]</pre>";
+    </script>
+  </body>
+</html>

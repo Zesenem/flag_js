@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScrypt</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <h1> JS - </h1>
+    <main>
+        <section id="output">
+            
+
+        </section>
+    </main> 
+    
+    <script>
+        
+        // Hoisting
+
+        // Hoisting é um comportamento do JavaScript onde as declarações de variáveis e funções são movidas para o topo do seu escopo antes da execução do código. Isso significa que você pode usar variáveis e funções antes de declará-las no código.
+
+        // O hoisting é uma característica do JavaScript que pode causar confusão, especialmente para iniciantes. Quando você declara uma variável usando var, let ou const, o JavaScript "içará" a declaração para o topo do seu escopo. Isso significa que você pode usar a variável antes de declará-la no código.
+
+        // No entanto, apenas as declarações são içadas, não as inicializações. Isso pode levar a comportamentos inesperados se você não estiver ciente disso.
+
+        // Exemplo de Hoisting com variáveis
+
+        console.log(myVar); // undefined
+
+        var myVar = 5;
+
+        console.log(myVar); // 5
+
+        // Exemplo de Hoisting com funções
+
+        console.log(myFunction()); // "Hello, World!"
+
+        function myFunction() {
+            return "Hello, World!";
+        }
+
+        // Exemplo de Hoisting com funções anônimas
+
+        sayHello(); // "Hello, World!"
+
+        var sayHello = function() {
+            console.log("Hello, World!");
+        }
+        // Isso resultará em um erro, porque a função não foi içada
+
+        // Arrow Functions
+
+        // As arrow functions são uma forma mais concisa de escrever funções em JavaScript. Elas têm uma sintaxe diferente e não têm seu próprio this, o que pode ser útil em alguns casos.
+
+        const add = (a, b) => a + b;
+        const square = x => x * x;  
+
+        function calcCirclePerimeter(radius) {
+            let perimeter = 2 * Math.PI * radius;
+            return perimeter;
+        }
+
+        let calcperimeter = (radius) => 2 * Math.PI * radius;
+
+        // Arrow functions sao funcoes anonimas, ou seja, elas não têm nome. Elas são frequentemente usadas como funções de callback ou para passar funções como argumentos para outras funções logo tambem nao sao utilizaveis com hoisting.
+
+        let calcCirclePerimeter2 = (radius) => {
+            let perimeter = 2 * Math.PI * radius;
+            return perimeter;
+        }
+
+
+    </script>
+</body>
+</html>
