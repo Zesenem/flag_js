@@ -9,20 +9,20 @@
 
 document.addEventListener("DOMContentLoaded", function() {
   
-    var newItemForm = document.getElementById("newItemForm");
-    var newItemButtonDiv = document.getElementById("newItemButton");
-    var showFormButton = document.getElementById("showForm");
-    var itemDescription = document.getElementById("itemDescription");
-    var itemList = document.querySelector("ul");
-    var header = document.querySelector("h2");
+    let newItemForm = document.getElementById("newItemForm");
+    let newItemButton = document.getElementById("newItemButton");
+    let showFormButton = document.getElementById("showForm");
+    let itemDescription = document.getElementById("itemDescription");
+    let itemList = document.querySelector("ul");
+    let header = document.querySelector("h2");
   
     
-    var deletedItems = [];
+    let deletedItems = [];
   
     newItemForm.classList.add("hide");
   
     function updateCount() {
-      var items = itemList.querySelectorAll("li:not(.complete)");
+      let items = itemList.querySelectorAll("li:not(.complete)");
       header.innerHTML = 'Buy groceries <span>' + items.length + '</span>';
     }
   
@@ -30,15 +30,15 @@ document.addEventListener("DOMContentLoaded", function() {
   
     showFormButton.addEventListener("click", function() {
       newItemForm.classList.remove("hide");
-      newItemButtonDiv.classList.add("hide");
+      newItemButton.classList.add("hide");
       itemDescription.focus();
     });
   
     newItemForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      var text = itemDescription.value.trim();
+      let text = itemDescription.value.trim();
       if (text !== "") {
-        var li = document.createElement("li");
+        let li = document.createElement("li");
         li.textContent = text;
         li.addEventListener("click", listItemClick);
         itemList.appendChild(li);
@@ -46,11 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
         updateCount();
       }
       newItemForm.classList.add("hide");
-      newItemButtonDiv.classList.remove("hide");
+      newItemButton.classList.remove("hide");
     });
   
     function listItemClick(e) {
-      var li = this;
+      let li = this;
       if (li.classList.contains("complete")) {
         deletedItems.push(li);
         li.parentElement.removeChild(li);
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
       updateCount();
     }
   
-    var listItems = itemList.querySelectorAll("li");
+    let listItems = itemList.querySelectorAll("li");
     listItems.forEach(function(li) {
       li.addEventListener("click", listItemClick);
     });
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("keydown", function(e) {
       if ((e.ctrlKey || e.metaKey) && e.key === "z") {
         if (deletedItems.length > 0) {
-          var li = deletedItems.pop();
+          let li = deletedItems.pop();
           itemList.appendChild(li);
           updateCount();
         }
