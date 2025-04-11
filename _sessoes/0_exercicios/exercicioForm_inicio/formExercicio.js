@@ -7,7 +7,75 @@
 6 - ao fazer 'ctrl-z' ou 'cmd-z' desfazer apagamento do item
 */
 
+document.addEventListener("DOMContentLoaded", function() {
+  
+    var newItemForm = document.getElementById("newItemForm");
+    var newItemButtonDiv = document.getElementById("newItemButton");
+    var showFormButton = document.getElementById("showForm");
+    var itemDescription = document.getElementById("itemDescription");
+    var itemList = document.querySelector("ul");
+    var header = document.querySelector("h2");
+  
+    
+    var deletedItems = [];
+  
+    newItemForm.classList.add("hide");
+  
+    function updateCount() {
+      var items = itemList.querySelectorAll("li:not(.complete)");
+      header.innerHTML = 'Buy groceries <span>' + items.length + '</span>';
+    }
+  
+    updateCount();
+  
+    showFormButton.addEventListener("click", function() {
+      newItemForm.classList.remove("hide");
+      newItemButtonDiv.classList.add("hide");
+      itemDescription.focus();
+    });
+  
+    newItemForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      var text = itemDescription.value.trim();
+      if (text !== "") {
+        var li = document.createElement("li");
+        li.textContent = text;
+        li.addEventListener("click", listItemClick);
+        itemList.appendChild(li);
+        itemDescription.value = "";
+        updateCount();
+      }
+      newItemForm.classList.add("hide");
+      newItemButtonDiv.classList.remove("hide");
+    });
+  
+    function listItemClick(e) {
+      var li = this;
+      if (li.classList.contains("complete")) {
+        deletedItems.push(li);
+        li.parentElement.removeChild(li);
+      } else {
+        li.classList.add("complete");
+        itemList.appendChild(li);
+      }
 
-
-
+      updateCount();
+    }
+  
+    var listItems = itemList.querySelectorAll("li");
+    listItems.forEach(function(li) {
+      li.addEventListener("click", listItemClick);
+    });
+  
+    document.addEventListener("keydown", function(e) {
+      if ((e.ctrlKey || e.metaKey) && e.key === "z") {
+        if (deletedItems.length > 0) {
+          var li = deletedItems.pop();
+          itemList.appendChild(li);
+          updateCount();
+        }
+      }
+    });
+  
+  }); 
 

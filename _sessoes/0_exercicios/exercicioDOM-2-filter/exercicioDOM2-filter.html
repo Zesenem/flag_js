@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio DOM 2</title>
+    <link rel="stylesheet" href="css/styles-filter.css" />
+  </head>
+  <body>
+    <main>
+      <h1>A minha Biblioteca de Livros</h1>
+
+      <section id="filters">
+        <select id="statusFilter">
+          <option value="all">Todos</option>
+          <option value="read">Já lidos</option>
+          <option value="unread">Não lidos</option>
+        </select>
+
+        <input type="text" id="searchFilter" placeholder="Buscar por título ou autor" />
+        <button id="applyFilters">Filtrar</button>
+      </section>
+
+      <section id="grid"></section>
+    </main>
+
+    <div id="imageModal" class="modal">
+      <div id="modalContent">
+        <span id="closeModal" class="close-btn"> × </span>
+        <img id="fullImage" src="" alt="Full-size book cover" />
+      </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/exercicioDOM2-filter.js"></script>
+  </body>
+</html>
