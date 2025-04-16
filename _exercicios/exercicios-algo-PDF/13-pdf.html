@@ -1,43 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Difference of Higher and Lower</title>
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-    <h1> JS - Exercicio </h1>
-    <main>
-        <section id="output">
-            
+  <header>
+    <h1>Difference of Higher and Lower</h1>
+  </header>
+  <main>
+    <div class="container">
 
-        </section>
-    </main> 
-    
-    <script>
+      <!-- Pseudocode Section -->
+      <section class="pseudocode" id="pseudocode">
+        <h2>Portugol Pseudocode</h2>
+        <pre>
+inicio
+  real a, b, total
 
+  escrever "digite o seu valor a "
+  ler a
 
-        // Difference of Higher and Lower
+  escrever "digite o seu valor b "
+  ler b
 
-        let a = Number(prompt("Digite o valor de A"));
+  se a > b entao
+    total <- a - b
+  senao
+    total <- b - a
+  fimSe
 
-        let b = Number(prompt("Digite o valor de B"));
+  escrever "o seu total é: ", total
+fim
+        </pre>
+      </section>
 
-        let difference = 0;
+      <!-- JavaScript Implementation Section -->
+      <section id="javascript" class="js-container">
+        <h2>JavaScript Implementation</h2>
+        <pre id="js-code">
+// Difference of Higher and Lower Calculator
 
-        if (a > b) {
-            difference = a - b;
-        } else {
-            difference = b - a;
-        }
+function runJS() {
+  let a = Number(prompt("Digite o valor de A"));
+  let b = Number(prompt("Digite o valor de B"));
+  
+  let difference = 0;
 
-        document.getElementById("output").innerHTML = `<p><strong>Difference:</strong> ${difference} </p>`;
+  if (a > b) {
+    difference = a - b;
+  } else {
+    difference = b - a;
+  }
 
-        
+  return `<p><strong>Resultado:</strong> ${difference}</p>`;
+}
+        </pre>
+        <button id="run-js">Run JavaScript</button>
+        <div id="output" class="output"></div>
+      </section>
 
-        
+    </div>
+  </main>
 
-    </script>
+  <script>
+    function runJS() {
+      let a = Number(prompt("Digite o valor de A"));
+      let b = Number(prompt("Digite o valor de B"));
+
+      let difference = 0;
+
+      if (a > b) {
+        difference = a - b;
+      } else {
+        difference = b - a;
+      }
+
+      return `<p><strong>Resultado:</strong> ${difference}</p>`;
+    }
+
+    document.getElementById("run-js").addEventListener("click", function () {
+      const result = runJS();
+      document.getElementById("output").innerHTML = result;
+    });
+  </script>
 </body>
 </html>

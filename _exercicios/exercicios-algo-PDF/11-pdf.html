@@ -1,39 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Square Sum</title>
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-    <h1> JS - Exercicio </h1>
-    <main>
-        <section id="output">
-            
+  <header>
+    <h1>Square Sum Calculator</h1>
+  </header>
+  <main>
+    <div class="container">
 
-        </section>
-    </main> 
-    
-    <script>
+      <!-- Pseudocode Section -->
+      <section class="pseudocode" id="pseudocode">
+        <h2>Portugol Pseudocode</h2>
+        <pre>
+inicio
+  real a, b, c, total
 
+  escrever "digite valor a: "
+  ler a
 
-        // Square Sum
+  escrever "digite valor b: "
+  ler b
 
-        let a = Number(prompt("Digite o valor de A"));
+  escrever "digite valor c: "
+  ler c
 
-        let b = Number(prompt("Digite o valor de B"));
+  total ← a^2 + b^2 + c^2
 
-        let c = Number(prompt("Digite o valor de C"));
+  escrever "o seu total é: ", total
+fim
+        </pre>
+      </section>
 
-        let sum = 0;
+      <!-- JavaScript Implementation Section -->
+      <section id="javascript" class="js-container">
+        <h2>JavaScript Implementation</h2>
+        <pre id="js-code">
+// Square Sum Calculator
 
-        sum = (a * a) + (b * b) + (c * c);
+function runJS() {
+  let a = Number(prompt("Digite o valor de A"));
+  let b = Number(prompt("Digite o valor de B"));
+  let c = Number(prompt("Digite o valor de C"));
 
-        document.getElementById("output").innerHTML = `<p><strong>Sum:</strong> ${sum} </p>`;
+  let total = (a * a) + (b * b) + (c * c);
 
-        
+  return `<p><strong>Resultado:</strong> ${total}</p>`;
+}
+        </pre>
+        <button id="run-js">Run JavaScript</button>
+        <div id="output" class="output"></div>
+      </section>
 
-    </script>
+    </div>
+  </main>
+
+  <script>
+    function runJS() {
+      let a = Number(prompt("Digite o valor de A"));
+      let b = Number(prompt("Digite o valor de B"));
+      let c = Number(prompt("Digite o valor de C"));
+
+      let total = (a * a) + (b * b) + (c * c);
+
+      return `<p><strong>Resultado:</strong> ${total}</p>`;
+    }
+
+    document.getElementById("run-js").addEventListener("click", function () {
+      const result = runJS();
+      document.getElementById("output").innerHTML = result;
+    });
+  </script>
 </body>
 </html>

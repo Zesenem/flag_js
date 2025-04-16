@@ -1,43 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Pass or Fail with Exam</title>
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-    <h1> JS - Exercicio </h1>
-    <main>
-        <section id="output">
-            
+  <header>
+    <h1>Student Pass or Fail with Exam</h1>
+  </header>
+  <main>
+    <div class="container">
 
-        </section>
-    </main> 
+      <!-- Pseudocode Section -->
+      <section class="pseudocode" id="pseudocode">
+        <h2>Portugol Pseudocode</h2>
+        <pre>
+inicio
+    real a, b, c, media
     
-    <script>
+    escrever "digite o valor A "
+    ler a
+    
+    escrever "digite o valor B "
+    ler b
+    
+    media <- (a + b) / 2 
+    
+    se media >= 7 entao
+        escrever "o aluno foi aprovado com a media: ", media
+    senao
+        escrever "digite o valor C da nota de exame: "
+        ler c
+        
+        media <- (a + b + c) / 3
+        
+        se media >= 7 entao
+            escrever "o aluno foi aprovado com exame com a media: ", media
+        senao
+            escrever "o aluno foi reprovado com exame com a media: ", media
+        fimSe
+    fimSe
+fim
+        </pre>
+      </section>
 
+      <!-- JavaScript Implementation Section -->
+      <section id="javascript" class="js-container">
+        <h2>JavaScript Implementation</h2>
+        <pre id="js-code">
+// Student Pass or Fail with Exam Calculator
 
-        // Student Pass or Fail
+function runJS() {
+  let num1 = Number(prompt("Digite a nota 1"));
+  let num2 = Number(prompt("Digite a nota 2"));
 
-        let num1 = Number(prompt("Digite a nota 1"));
-        let num2 = Number(prompt("Digite a nota 2"));
+  let sum = num1 + num2;
+  let average = sum / 2;
 
-        let sum = num1 + num2;
-        let average = sum / 2;
+  if (average >= 7) {
+    return `<p><strong>Aprovado:</strong> ${average}</p>`;
+  } else {
+    let exam = Number(prompt("Digite a nota do exame"));
+    let final = (average + exam) / 2;
+    if (final >= 7) {
+      return `<p><strong>Aprovado com Exame:</strong> ${final}</p>`;
+    } else {
+      return `<p><strong>Reprovado:</strong> ${final}</p>`;
+    }
+  }
+}
+        </pre>
+        <button id="run-js">Run JavaScript</button>
+        <div id="output" class="output"></div>
+      </section>
 
-        if (average > 7) {
-            document.getElementById("output").innerHTML = `<p><strong>Pass:</strong> ${average} </p>`;
+    </div>
+  </main>
+
+  <script>
+    function runJS() {
+      let num1 = Number(prompt("Digite a nota 1"));
+      let num2 = Number(prompt("Digite a nota 2"));
+
+      let sum = num1 + num2;
+      let average = sum / 2;
+
+      if (average >= 7) {
+        return `<p><strong>Aprovado:</strong> ${average}</p>`;
+      } else {
+        let exam = Number(prompt("Digite a nota do exame"));
+        let final = (average + exam) / 2;
+        if (final >= 7) {
+          return `<p><strong>Aprovado com Exame:</strong> ${final}</p>`;
         } else {
-            let exame = Number(prompt("Digite a nota do exame"));
-            let final = (average + exame) / 2;
-            if (final >= 7) {
-                document.getElementById("output").innerHTML = `<p><strong>Pass:</strong> ${final} </p>`;
-            } else {
-                document.getElementById("output").innerHTML = `<p><strong>Fail:</strong> ${final} </p>`;
-            }
+          return `<p><strong>Reprovado:</strong> ${final}</p>`;
         }
+      }
+    }
 
-    </script>
+    document.getElementById("run-js").addEventListener("click", function () {
+      const result = runJS();
+      document.getElementById("output").innerHTML = result;
+    });
+  </script>
 </body>
 </html>

@@ -1,44 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swap A and B</title>
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-    <h1> JS - Exercicio </h1>
-    <main>
-        <section id="output">
-            
+  <header>
+    <h1>Algorithm Translator</h1>
+  </header>
+  <main>
+    <div class="container">
 
-        </section>
-    </main> 
-    
-    <script>
+      <!-- Pseudocode Section -->
+      <section class="pseudocode" id="pseudocode">
+        <h2>Portugol Pseudocode</h2>
+        <pre>
+inicio
 
-        // Change Values between A and B
+  real A, B, C
 
-        let a = Number(prompt("Digite o valor de A"));
+  escrever "digite o seu valor A "
+  ler A
 
-        let b = Number(prompt("Digite o valor de B"));
+  escrever "digite o seu valor B "
+  ler B
 
-        let c = a;
+  C ← A
+  A ← B
+  B ← C
 
-        a = b;
+  escrever "o seu valor A: ", A, "\n"
+  escrever "o seu valor B: ", B, "\n"
 
-        b = c;
+fim
+        </pre>
+      </section>
 
-        const resultsHTML = `<p><strong>Valor de A:</strong> ${a} </p>
-        <p><strong>Valor de B:</strong> ${b} </p>`;
-        
-        
-        document.getElementById("output").innerHTML = resultsHTML;
+      <!-- JavaScript Implementation Section -->
+      <section id="javascript" class="js-container">
+        <h2>JavaScript Implementation</h2>
+        <pre id="js-code">
+// Swap values of A and B using a temporary variable C
 
-        
+function runJS() {
+  let a = Number(prompt("Digite o valor de A:"));
+  let b = Number(prompt("Digite o valor de B:"));
 
-        
+  let c = a;
+  a = b;
+  b = c;
 
-    </script>
+  return `
+    <p><strong>Valor de A após troca:</strong> ${a}</p>
+    <p><strong>Valor de B após troca:</strong> ${b}</p>
+  `;
+}
+        </pre>
+        <button id="run-js">Run JavaScript</button>
+        <div id="output" class="output"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    function runJS() {
+      let a = Number(prompt("Digite o valor de A:"));
+      let b = Number(prompt("Digite o valor de B:"));
+
+      let c = a;
+      a = b;
+      b = c;
+
+      return `
+        <p><strong>Valor de A após troca:</strong> ${a}</p>
+        <p><strong>Valor de B após troca:</strong> ${b}</p>
+      `;
+    }
+
+    document.getElementById("run-js").addEventListener("click", function () {
+      const result = runJS();
+      document.getElementById("output").innerHTML = result;
+    });
+  </script>
 </body>
 </html>

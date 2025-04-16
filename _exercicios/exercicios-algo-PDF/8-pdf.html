@@ -1,32 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Square Calculator</title>
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-    <h1> JS - Exercicio </h1>
-    <main>
-        <section id="output">
-            
+  <header>
+    <h1>Algorithm Translator</h1>
+  </header>
+  <main>
+    <div class="container">
 
-        </section>
-    </main> 
-    
-    <script>
+      <!-- Pseudocode Section -->
+      <section class="pseudocode" id="pseudocode">
+        <h2>Portugol Pseudocode</h2>
+        <pre>
+inicio
 
-        // Squared Calculator
+  real A
 
-        let number = Number(prompt("Digite um número"));
+  escrever "digite o valor A: "
+  ler A
 
-        let squared = Math.pow(number, 2);
+  A ← A ^ 2
 
-           const resultsHTML = `<p><strong>Squared:</strong> ${squared} </p>`;
-        
-        document.getElementById("output").innerHTML = resultsHTML;
-        
-    </script>
+  escrever "o valor de A ao quadrado é: ", A
+
+fim
+        </pre>
+      </section>
+
+      <!-- JavaScript Implementation Section -->
+      <section id="javascript" class="js-container">
+        <h2>JavaScript Implementation</h2>
+        <pre id="js-code">
+// Square a given number
+
+function runJS() {
+  let number = Number(prompt("Digite um número:"));
+  let squared = Math.pow(number, 2);
+
+  return `<p><strong>Ao quadrado:</strong> ${squared}</p>`;
+}
+        </pre>
+        <button id="run-js">Run JavaScript</button>
+        <div id="output" class="output"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    function runJS() {
+      let number = Number(prompt("Digite um número:"));
+      let squared = Math.pow(number, 2);
+
+      return `<p><strong>Ao quadrado:</strong> ${squared}</p>`;
+    }
+
+    document.getElementById("run-js").addEventListener("click", function () {
+      const result = runJS();
+      document.getElementById("output").innerHTML = result;
+    });
+  </script>
 </body>
 </html>
