@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
-</head>
-<body>
-    <h1> JS - Exercicio </h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gasoline Calculator</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Algorithm Translator</h1>
+    </header>
     <main>
-        <section id="output">
-            
+      <div class="container">
+        <!-- Pseudocode Section -->
+        <section class="pseudocode" id="pseudocode">
+          <h2>Portugol Pseudocode</h2>
+          <pre>
+Inicio
 
+    variavel real tempo, velocidade, distancia, gasolina
+
+    escrever "Digite o tempo de viagem: "
+    ler tempo
+
+    escrever "Digite a velocidade média: "
+    ler velocidade
+
+    distancia = tempo * velocidade
+    gasolina = distancia / 12
+
+    escrever "Gasolina: ", gasolina, " L"
+
+Fim
+          </pre>
         </section>
-    </main> 
-    
+
+        <!-- JavaScript Implementation Section -->
+        <section id="javascript" class="js-container">
+          <h2>JavaScript Implementation</h2>
+          <pre id="js-code">
+// Gasoline consumption calculator
+
+function runJS() {
+  let tempo = Number(prompt("Digite o tempo de viagem:"));
+  let velocidade = Number(prompt("Digite a velocidade média:"));
+
+  let distancia = tempo * velocidade;
+  let gasolina = distancia / 12;
+
+  return `<p><strong>Gasolina:</strong> ${gasolina.toFixed(2)} L</p>`;
+}
+          </pre>
+          <button id="run-js">Run JavaScript</button>
+          <div id="output" class="output"></div>
+        </section>
+      </div>
+    </main>
+
     <script>
+      function runJS() {
+        let tempo = Number(prompt("Digite o tempo de viagem:"));
+        let velocidade = Number(prompt("Digite a velocidade média:"));
 
-        // Gasoline Calculator
+        let distancia = tempo * velocidade;
+        let gasolina = distancia / 12;
 
-        let time = Number(prompt("Digite o tempo de viagem"));
-        let speed = Number(prompt("Digite a velocidade média"));
+        return `<p><strong>Gasolina:</strong> ${gasolina.toFixed(2)} L</p>`;
+      }
 
-        let distance = time * speed;
-
-        let gas = distance / 12;
-
-           const resultsHTML = `<p><strong>Gasoline:</strong> ${gas.toFixed(2)} L </p>`;
-
-        
-
-        document.getElementById("output").innerHTML = resultsHTML;
-
-        
-
+      document.getElementById("run-js").addEventListener("click", function () {
+        const result = runJS();
+        document.getElementById("output").innerHTML = result;
+      });
     </script>
-</body>
+  </body>
 </html>

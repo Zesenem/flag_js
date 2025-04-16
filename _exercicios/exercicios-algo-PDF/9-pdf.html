@@ -1,34 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Difference of Squares</title>
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-    <h1> JS - Exercicio </h1>
-    <main>
-        <section id="output">
-            
+  <header>
+    <h1>Algorithm Translator</h1>
+  </header>
+  <main>
+    <div class="container">
 
-        </section>
-    </main> 
-    
-    <script>
+      <!-- Pseudocode Section -->
+      <section class="pseudocode" id="pseudocode">
+        <h2>Portugol Pseudocode</h2>
+        <pre>
+inicio
+  real a, b, total
 
-        // Difference of Squares
+  escrever "digite o primeiro número: "
+  ler a
 
-        let a = Number(prompt("Digite o valor de A"));
+  escrever "digite o segundo número: "
+  ler b
 
-        let b = Number(prompt("Digite o valor de B"));
+  total ← (a + b) * (a - b)
 
-        let difference = Math.pow(a, 2) - Math.pow(b, 2);
+  escrever "a diferença dos quadrados é: ", total
+fim
+        </pre>
+      </section>
 
-           const resultsHTML = `<p><strong>Difference:</strong> ${difference} </p>`;
-        
-        document.getElementById("output").innerHTML = resultsHTML;
+      <!-- JavaScript Implementation Section -->
+      <section id="javascript" class="js-container">
+        <h2>JavaScript Implementation</h2>
+        <pre id="js-code">
+// Difference of Squares
 
-    </script>
+function runJS() {
+  let a = Number(prompt("Digite o primeiro número:"));
+  let b = Number(prompt("Digite o segundo número:"));
+
+  let difference = (a + b) * (a - b);
+
+  return `<p><strong>Diferença dos quadrados:</strong> ${difference}</p>`;
+}
+        </pre>
+        <button id="run-js">Run JavaScript</button>
+        <div id="output" class="output"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    function runJS() {
+      let a = Number(prompt("Digite o primeiro número:"));
+      let b = Number(prompt("Digite o segundo número:"));
+
+      let difference = (a + b) * (a - b);
+
+      return `<p><strong>Diferença dos quadrados:</strong> ${difference}</p>`;
+    }
+
+    document.getElementById("run-js").addEventListener("click", function () {
+      const result = runJS();
+      document.getElementById("output").innerHTML = result;
+    });
+  </script>
 </body>
 </html>

@@ -1,40 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
-</head>
-<body>
-    <h1> JS - Exercicio </h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Installments Calculator</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Algorithm Translator</h1>
+    </header>
     <main>
-        <section id="output">
-            
+      <div class="container">
+        <!-- Pseudocode Section -->
+        <section class="pseudocode" id="pseudocode">
+          <h2>Portugol Pseudocode</h2>
+          <pre>
+Inicio
 
+    variavel real valor, taxa, tempo, parcelas
+
+    escrever "Digite o valor da compra: "
+    ler valor
+
+    escrever "Digite a taxa de juros (%): "
+    ler taxa
+
+    escrever "Digite o tempo (meses): "
+    ler tempo
+
+    parcelas = valor + (valor * (taxa / 100) * tempo)
+
+    escrever "Parcelas: R$", parcelas
+
+Fim
+          </pre>
         </section>
-    </main> 
-    
+
+        <!-- JavaScript Implementation Section -->
+        <section id="javascript" class="js-container">
+          <h2>JavaScript Implementation</h2>
+          <pre id="js-code">
+// Installments calculator with interest
+
+function runJS() {
+  let valor = Number(prompt("Digite o valor da compra em R$:"));
+  let taxa = Number(prompt("Digite a taxa de juros em %:"));
+  let tempo = Number(prompt("Digite o tempo de pagamento em meses:"));
+
+  let parcelas = valor + (valor * (taxa / 100) * tempo);
+
+  return `
+    <p><strong>Valor da compra:</strong> R$ ${valor.toFixed(2)}</p>
+    <p><strong>Taxa de juros:</strong> ${taxa.toFixed(2)}%</p>
+    <p><strong>Tempo de pagamento:</strong> ${tempo} meses</p>
+    <p><strong>Total a pagar:</strong> R$ ${parcelas.toFixed(2)}</p>
+  `;
+}
+          </pre>
+          <button id="run-js">Run JavaScript</button>
+          <div id="output" class="output"></div>
+        </section>
+      </div>
+    </main>
+
     <script>
+      function runJS() {
+        let valor = Number(prompt("Digite o valor da compra em R$:"));
+        let taxa = Number(prompt("Digite a taxa de juros em %:"));
+        let tempo = Number(prompt("Digite o tempo de pagamento em meses:"));
 
-        // Installements Calculator
+        let parcelas = valor + (valor * (taxa / 100) * tempo);
 
-        let value = Number(prompt("Digite o valor da compra"));
+        return `
+          <p><strong>Valor da compra:</strong> R$ ${valor.toFixed(2)}</p>
+          <p><strong>Taxa de juros:</strong> ${taxa.toFixed(2)}%</p>
+          <p><strong>Tempo de pagamento:</strong> ${tempo} meses</p>
+          <p><strong>Total a pagar:</strong> R$ ${parcelas.toFixed(2)}</p>
+        `;
+      }
 
-        let tax = Number(prompt("Digite a taxa de juros"));
-
-        let time = Number(prompt("Digite o tempo de pagamento"));
-
-        let installements = value + (value * (tax / 100) * time);
-
-           const resultsHTML = `<p><strong>Installements:</strong> ${installements.toFixed(2)} </p>`;
-        
-        document.getElementById("output").innerHTML = resultsHTML;
-
-        
-
-        
-
+      document.getElementById("run-js").addEventListener("click", function () {
+        const result = runJS();
+        document.getElementById("output").innerHTML = result;
+      });
     </script>
-</body>
+  </body>
 </html>

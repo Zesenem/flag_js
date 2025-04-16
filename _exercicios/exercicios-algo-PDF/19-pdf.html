@@ -1,40 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Check Bigger and Smaller Number</title>
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-    <h1> JS - Exercicio </h1>
-    <main>
-        <section id="output">
-            
+  <header>
+    <h1>Check Bigger and Smaller Number</h1>
+  </header>
+  <main>
+    <div class="container">
 
-        </section>
-    </main> 
+      <!-- Pseudocode Section -->
+      <section class="pseudocode" id="pseudocode">
+        <h2>Portugol Pseudocode</h2>
+        <pre>
+inicio
     
-    <script>
-        // Check bigger and smaller number
+    real A
+    real B
+    real C
+    real D
+    real F
+    real maior
+    real menor
+    
+    escrever "digite o valor 1 "
+    ler A
+    
+    escrever "digite o valor 2 "
+    ler B
+    
+    escrever "digite o valor 3 "
+    ler C
+    
+    escrever "digite o valor 4 "
+    ler D
+    
+    escrever "digite o valor 5 "
+    ler F
+    
+    maior <- A
+    menor <- A
+    
+    se B > maior entao
+        maior <- B
+    fimSe
+    se B < menor entao
+        menor <- B
+    fimSe
+    
+    se C > maior entao
+        maior <- C
+    fimSe
+    se C < menor entao
+        menor <- C
+    fimSe
+    
+    se D > maior entao
+        maior <- D
+    fimSe
+    se D < menor entao
+        menor <- D
+    fimSe
+    
+    se F > maior entao
+        maior <- F
+    fimSe
+    se F < menor entao
+        menor <- F
+    fimSe
+    
+    escrever "O maior valor é: ", maior, "\n"
+    escrever "O menor valor é: ", menor, "\n"
+    
+fim
+        </pre>
+      </section>
 
-        let num1 = Number(prompt("Enter the first number: "));
+      <!-- JavaScript Implementation Section -->
+      <section id="javascript" class="js-container">
+        <h2>JavaScript Implementation</h2>
+        <pre id="js-code">
+// Check bigger and smaller number
 
-        let num2 = Number(prompt("Enter the second number: "));
+let num1 = Number(prompt("Enter the first number: "));
+let num2 = Number(prompt("Enter the second number: "));
+let num3 = Number(prompt("Enter the third number: "));
+let num4 = Number(prompt("Enter the fourth number: "));
+let num5 = Number(prompt("Enter the fifth number: "));
 
-        let num3 = Number(prompt("Enter the third number: "));
+let bigger = Math.max(num1, num2, num3, num4, num5);
+let smaller = Math.min(num1, num2, num3, num4, num5);
 
-        let num4 = Number(prompt("Enter the fourth number: "));
+document.getElementById("output").innerHTML = `The bigger number is ${bigger} and the smaller number is ${smaller}`;
+        </pre>
+        <button id="run-js">Run JavaScript</button>
+        <div id="output" class="output"></div>
+      </section>
 
-        let num5 = Number(prompt("Enter the fifth number: "));
+    </div>
+  </main>
 
-        let bigger = Math.max(num1, num2, num3, num4, num5);
+  <script>
+    // Check bigger and smaller number
 
-        let smaller = Math.min(num1, num2, num3, num4, num5);
+    let num1 = Number(prompt("Enter the first number: "));
+    let num2 = Number(prompt("Enter the second number: "));
+    let num3 = Number(prompt("Enter the third number: "));
+    let num4 = Number(prompt("Enter the fourth number: "));
+    let num5 = Number(prompt("Enter the fifth number: "));
 
-        document.getElementById("output").innerHTML = `The bigger number is ${bigger} and the smaller number is ${smaller}`;
-        
-      </script>
-      
+    let bigger = Math.max(num1, num2, num3, num4, num5);
+    let smaller = Math.min(num1, num2, num3, num4, num5);
+
+    document.getElementById("output").innerHTML = `The bigger number is ${bigger} and the smaller number is ${smaller}`;
+  </script>
 </body>
 </html>

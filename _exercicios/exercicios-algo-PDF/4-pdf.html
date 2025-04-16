@@ -1,35 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
-</head>
-<body>
-    <h1> JS - Exercicio </h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volume Calculator</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Algorithm Translator</h1>
+    </header>
     <main>
-        <section id="output">
-            
+      <div class="container">
+        <!-- Portugol Pseudocode Section -->
+        <section class="pseudocode" id="pseudocode">
+          <h2>Portugol Pseudocode</h2>
+          <pre>
+Inicio
 
+    variavel real altura
+    variavel real raio
+    variavel real volume
+
+    escrever "Digite a altura: "
+    ler altura
+
+    escrever "Digite o raio: "
+    ler raio
+
+    volume = PI * (raio ^ 2) * altura
+
+    escrever "Volume: ", volume
+
+Fim
+          </pre>
         </section>
-    </main> 
-    
+
+        <!-- JavaScript Implementation Section -->
+        <section id="javascript" class="js-container">
+          <h2>JavaScript Implementation</h2>
+          <pre id="js-code">
+// Volume of a Cylinder
+
+function runJS() {
+  let altura = Number(prompt("Digite a altura:"));
+  let raio = Number(prompt("Digite o raio:"));
+
+  let volume = Math.PI * Math.pow(raio, 2) * altura;
+
+  return `<p><strong>Volume:</strong> ${volume.toFixed()}</p>`;
+}
+          </pre>
+          <button id="run-js">Run JavaScript</button>
+          <div id="output" class="output"></div>
+        </section>
+      </div>
+    </main>
+
     <script>
+      function runJS() {
+        let altura = Number(prompt("Digite a altura:"));
+        let raio = Number(prompt("Digite o raio:"));
 
-        // Volume Calculator
+        let volume = Math.PI * Math.pow(raio, 2) * altura;
 
-        let height = Number(prompt("Digite a altura"));
-        let radius = Number(prompt("Digite o raio"));
+        return `<p><strong>Volume:</strong> ${volume.toFixed()}</p>`;
+      }
 
-        let volume = Math.PI * Math.pow(radius, 2) * height;
-
-           const resultsHTML = `<p><strong>Volume:</strong> ${volume.toFixed()}</p>`;
-
-        document.getElementById("output").innerHTML = resultsHTML;
-
-        
-
+      document.getElementById("run-js").addEventListener("click", function () {
+        const result = runJS();
+        document.getElementById("output").innerHTML = result;
+      });
     </script>
-</body>
+  </body>
 </html>

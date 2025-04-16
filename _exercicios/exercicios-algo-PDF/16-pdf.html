@@ -1,53 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrypt</title>
-    <link rel="stylesheet" href="styles/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rising Order</title>
+  <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
-    <h1> JS - Exercicio </h1>
-    <main>
-        <section id="output">
-            
+  <header>
+    <h1>Rising Order</h1>
+  </header>
+  <main>
+    <div class="container">
 
-        </section>
-    </main> 
+      <!-- Pseudocode Section -->
+      <section class="pseudocode" id="pseudocode">
+        <h2>Portugol Pseudocode</h2>
+        <pre>
+inicio
+
+    inteiro A, B, C, menor, meio, maior
     
-    <script>
+    escrever "digite o valor A: "
+    ler A
+    
+    escrever "digite o valor B: "
+    ler B
+    
+    escrever "digite o valor C: "
+    ler C
+    
+    se (A <= B e A <= C) entao
+        menor <- A
+        se (B <= C) entao
+            meio <- B
+            maior <- C
+        senao
+            meio <- C
+            maior <- B
+        fimSe
+    senao
+        se (B <= A e B <= C) entao
+            menor <- B
+            se (A <= C) entao
+                meio <- A
+                maior <- C
+            senao
+                meio <- C
+                maior <- A
+            fimSe
+        senao
+            menor <- C
+            se (A <= B) entao
+                meio <- A
+                maior <- B
+            senao
+                meio <- B
+                maior <- A
+            fimSe
+        fimSe
+    fimSe
+    
+    escrever "os valores em ordem crescente sao: ", menor, ", ", meio, ", ", maior, "\n"
 
+fim
+        </pre>
+      </section>
 
-        // Rising Order
+      <!-- JavaScript Implementation Section -->
+      <section id="javascript" class="js-container">
+        <h2>JavaScript Implementation</h2>
+        <pre id="js-code">
+// Rising Order Calculator
 
-        let num1 = Number(prompt("Digite o primeiro número"));
+function runJS() {
+  let num1 = Number(prompt("Digite o primeiro número"));
+  let num2 = Number(prompt("Digite o segundo número"));
+  let num3 = Number(prompt("Digite o terceiro número"));
 
-        let num2 = Number(prompt("Digite o segundo número"));
+  if (num1 < num2 && num1 < num3) {
+    if (num2 < num3) {
+      return `<p><strong>Ordem Crescente:</strong> ${num1}, ${num2}, ${num3}</p>`;
+    } else {
+      return `<p><strong>Ordem Crescente:</strong> ${num1}, ${num3}, ${num2}</p>`;
+    }
+  } else if (num2 < num1 && num2 < num3) {
+    if (num1 < num3) {
+      return `<p><strong>Ordem Crescente:</strong> ${num2}, ${num1}, ${num3}</p>`;
+    } else {
+      return `<p><strong>Ordem Crescente:</strong> ${num2}, ${num3}, ${num1}</p>`;
+    }
+  } else if (num3 < num1 && num3 < num2) {
+    if (num1 < num2) {
+      return `<p><strong>Ordem Crescente:</strong> ${num3}, ${num1}, ${num2}</p>`;
+    } else {
+      return `<p><strong>Ordem Crescente:</strong> ${num3}, ${num2}, ${num1}</p>`;
+    }
+  }
+}
+        </pre>
+        <button id="run-js">Run JavaScript</button>
+        <div id="output" class="output"></div>
+      </section>
 
-        let num3 = Number(prompt("Digite o terceiro número"));
+    </div>
+  </main>
 
-        if ( num1 < num2 && num1 < num3 ) {
-            if ( num2 < num3) {
-                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num1}, ${num2}, ${num3} </p>`;
-            } else {
-                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num1}, ${num3}, ${num2} </p>`;
-            }
-        } else if ( num2 < num1 && num2 < num3) {
-            if ( num1 < num3) {
-                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num2}, ${num1}, ${num3} </p>`;
-            } else {
-                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num2}, ${num3}, ${num1} </p>`;
-            }
-        } else if ( num3 < num1 && num3 < num2) {
-            if ( num1 < num2) {
-                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num3}, ${num1}, ${num2} </p>`;
-            } else {
-                document.getElementById("output").innerHTML = `<p><strong>Ordem Crescente:</strong> ${num3}, ${num2}, ${num1} </p>`;
-            }
+  <script>
+    function runJS() {
+      let num1 = Number(prompt("Digite o primeiro número"));
+      let num2 = Number(prompt("Digite o segundo número"));
+      let num3 = Number(prompt("Digite o terceiro número"));
+
+      if (num1 < num2 && num1 < num3) {
+        if (num2 < num3) {
+          return `<p><strong>Ordem Crescente:</strong> ${num1}, ${num2}, ${num3}</p>`;
+        } else {
+          return `<p><strong>Ordem Crescente:</strong> ${num1}, ${num3}, ${num2}</p>`;
         }
+      } else if (num2 < num1 && num2 < num3) {
+        if (num1 < num3) {
+          return `<p><strong>Ordem Crescente:</strong> ${num2}, ${num1}, ${num3}</p>`;
+        } else {
+          return `<p><strong>Ordem Crescente:</strong> ${num2}, ${num3}, ${num1}</p>`;
+        }
+      } else if (num3 < num1 && num3 < num2) {
+        if (num1 < num2) {
+          return `<p><strong>Ordem Crescente:</strong> ${num3}, ${num1}, ${num2}</p>`;
+        } else {
+          return `<p><strong>Ordem Crescente:</strong> ${num3}, ${num2}, ${num1}</p>`;
+        }
+      }
+    }
 
-        
-
-    </script>
+    document.getElementById("run-js").addEventListener("click", function () {
+      const result = runJS();
+      document.getElementById("output").innerHTML = result;
+    });
+  </script>
 </body>
 </html>
