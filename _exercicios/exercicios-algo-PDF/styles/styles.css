@@ -18,3 +18,28 @@ main {
     border-radius: 12px;
     background-color: white;
 }
+
+body {
+    font-family: sans-serif;
+    margin: 2rem;
+    background: #f8f9fa;
+    color: #333;
+  }
+  h1, h2 {
+    color: #222;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+  .output {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #e0ffe0;
+    border-left: 5px solid #3c763d;
+  }
+  pre {
+    background: #222;
+    color: #0f0;
+    padding: 1rem;
+    overflow-x: auto;
+  }
