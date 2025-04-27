@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício Biblioteca</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>A minha Biblioteca de Livros</h1>
+
+      <section class="addBookBar" id="addBookSection">
+        <h2>Adicionar Livro</h2>
+        <form id="addBookForm">
+          <input type="text" id="newTitle" placeholder="Título do livro" required />
+          <input type="text" id="newAuthor" placeholder="Autor do livro" required />
+          <input type="text" id="newImageUrl" placeholder="URL da imagem (pequena)" />
+          <input type="text" id="newLargeImageUrl" placeholder="URL da imagem (grande)" />
+          <label> <input type="checkbox" id="newAlreadyRead" /> Já lido </label>
+          <button type="submit">Adicionar</button>
+        </form>
+      </section>
+
+      <section class="filterBar" id="filters">
+        <select id="statusFilter">
+          <option value="all">Todos</option>
+          <option value="read">Já lidos</option>
+          <option value="unread">Não lidos</option>
+        </select>
+        <input type="text" id="searchFilter" placeholder="Filtrar por título ou autor" />
+        <button id="applyFilters">Filtrar</button>
+      </section>
+
+      <section id="grid"></section>
+    </main>
+
+    <section id="imageModal" class="modal">
+      <article class="modal-content">
+        <span id="closeModal" class="close-btn">×</span>
+        <img id="fullImage" src="" alt="Full-size book cover" />
+      </article>
+    </section>
+
+    <section id="editModal" class="modal">
+      <article class="modal-content">
+        <span id="closeEditModal" class="close-btn">×</span>
+        <form id="editBookForm">
+          <h2>Editar Livro</h2>
+          <input type="text" id="editTitle" placeholder="Título do livro" required />
+          <input type="text" id="editAuthor" placeholder="Autor do livro" required />
+          <label> <input type="checkbox" id="editAlreadyRead" /> Já lido </label>
+          <button type="submit">Salvar</button>
+        </form>
+      </article>
+    </section>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

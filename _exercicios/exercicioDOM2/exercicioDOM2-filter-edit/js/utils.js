@@ -1,17 +1,11 @@
-// 1 - acrescentar uma seccao de filtros, para poder filtrar for ja lidos, nao lidos, todos, e por titulo de Author
-// 2 - dentro de cada card, acrescentar um botao de delete para apagar o respectivo livro
-// 3 - ao clicar no thumbnail do livro, abrir popup com imagem em grande
+import { books } from "./data.js";
 
-// get all books
-const getBooks = () => books;
+export const getBooks = () => books;
+export const getReadBooks = () => books.filter((b) => b.alreadyRead);
+export const getUnreadBooks = () => books.filter((b) => !book.alreadyRead);
 
-// read books
-const getReadBooks = () => books.filter((book) => book.alreadyRead);
-
-// unread books
-const getUnreadBooks = () => books.filter((book) => !book.alreadyRead);
-
-
-/// 1- acrescentar uma seccao de add book 
-
-//! destructuring, modulos(import, export), classes and object - update //!
+export const addBook = (book) => books.push(book);
+export const deleteBook = (index) => books.splice(index, 1);
+export const updateBook = (index, updatedFields) => {
+  Object.assign(books[index], updatedFields);
+};
