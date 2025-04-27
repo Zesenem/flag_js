@@ -10,3 +10,8 @@ const getReadBooks = () => books.filter((book) => book.alreadyRead);
 
 // unread books
 const getUnreadBooks = () => books.filter((book) => !book.alreadyRead);
+
+
+/// 1- acrescentar uma seccao de add book 
+
+//! destructuring, modulos(import, export), classes and object - update //!

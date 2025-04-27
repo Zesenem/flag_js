@@ -1,0 +1,19 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f7f7f7;
+
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  padding: 1em;
+}
+
+main {
+  border: 4px double gray;
+  margin: 1em 2em;
+  padding: 2em;
+  border-radius: 12px;
+  background-color: white;
+}
