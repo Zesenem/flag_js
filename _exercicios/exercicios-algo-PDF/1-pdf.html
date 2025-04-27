@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pseudocode & JavaScript Side by Side</title>
-    <link rel="stylesheet" href="styles/styles.css" />
-  </head>
-
-  <body>
-    <header>
-      <h1>Algorithm Translator</h1>
-    </header>
-    <main>
-      <div class="container">
-        <section class="pseudocode" id="pseudocode">
-          <h2>Portugol Pseudocode</h2>
-          <pre>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Display Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Algorithm Translator</h1>
+  <main>
+    <section class="pseudocode-box preformatted">
+      <h2>Portugol Pseudocode</h2>
+      <pre>
 Inicio
 
     variavel real num1
@@ -30,28 +26,23 @@ Inicio
     escrever "\nA soma dos quadrados é: " , (num1 * num1) + (num2 * num2)
 
 Fim
-          </pre>
-        </section>
+      </pre>
+    </section>
 
-        <section id="javascript" class="js-container">
-          <h2>JavaScript Implementation</h2>
+    <section class="js-box preformatted">
+      <h2>JavaScript Implementation</h2>
+      <pre>
+// JavaScript Square Sum Example
+function runJS() {
+  let num1 = Number(prompt("Digite o primeiro número:"));
+  let num2 = Number(prompt("Digite o segundo número:"));
+  let sum = (num1 * num1) + (num2 * num2);
+  return `<p><strong>Square Sum:</strong> ${sum}</p>`;
+}
+      </pre>
+    </section>
+  </main>
 
-          <pre id="js-code">
-  // JavaScript Square Sum Example
-
-  function runJS() {
-    let num1 = Number(prompt("Digite o primeiro número:"));
-    let num2 = Number(prompt("Digite o segundo número:"));
-    let sum = (num1 * num1) + (num2 * num2);
-    return `<strong>Square Sum:</strong>${sum}`;}
-  
-          </pre>
-          <button id="run-js">Run JavaScript</button>
-
-          <div id="output" class="output"></div>
-        </section>
-      </div>
-    </main>
 
     <script>
       function runJS() {
