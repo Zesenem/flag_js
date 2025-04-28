@@ -20,6 +20,8 @@ const editBookForm = document.getElementById("editBookForm");
 const statusFilter = document.getElementById("statusFilter");
 const searchFilter = document.getElementById("searchFilter");
 const applyFiltersButton = document.getElementById("applyFilters");
+const toggleAddBookBtn = document.getElementById('toggleAddBookBtn');
+const addBookSection = document.getElementById('addBookSection');
 
 let currentEditIndex = null;
 
@@ -59,6 +61,13 @@ applyFiltersButton.addEventListener("click", () => {
     ({ title, author }) => title.toLowerCase().includes(term) || author.toLowerCase().includes(term)
   );
   displayBooks(list);
+});
+
+toggleAddBookBtn.addEventListener('click', () => {
+  const isHidden = addBookSection.classList.toggle('hidden');
+  toggleAddBookBtn.textContent = isHidden
+    ? 'Adicionar Livro'
+    : 'Fechar Formulário';
 });
 
 addBookForm.addEventListener("submit", (e) => {

@@ -10,13 +10,15 @@
     <main>
       <h1>A minha Biblioteca de Livros</h1>
 
-      <section class="addBookBar" id="addBookSection">
+      <button id="toggleAddBookBtn" class="btn-toggle">Adicionar Livro</button>
+
+      <section class="addBookBar hidden" id="addBookSection">
         <h2>Adicionar Livro</h2>
         <form id="addBookForm">
           <input type="text" id="newTitle" placeholder="Título do livro" required />
           <input type="text" id="newAuthor" placeholder="Autor do livro" required />
-          <input type="text" id="newImageUrl" placeholder="URL da imagem (pequena)" />
-          <input type="text" id="newLargeImageUrl" placeholder="URL da imagem (grande)" />
+          <input type="text" id="newImageUrl" placeholder="Image Thumbnail" />
+          <input type="text" id="newLargeImageUrl" placeholder="Image Popup" />
           <label> <input type="checkbox" id="newAlreadyRead" /> Já lido </label>
           <button type="submit">Adicionar</button>
         </form>
@@ -47,10 +49,12 @@
         <span id="closeEditModal" class="close-btn">×</span>
         <form id="editBookForm">
           <h2>Editar Livro</h2>
-          <input type="text" id="editTitle" placeholder="Título do livro" required />
-          <input type="text" id="editAuthor" placeholder="Autor do livro" required />
+          <label for="editTitle">Título</label
+          ><input type="text" id="editTitle" placeholder="Título do livro" required />
+          <label for="editAuthor">Author</label
+          ><input type="text" id="editAuthor" placeholder="Autor do livro" required />
           <label> <input type="checkbox" id="editAlreadyRead" /> Já lido </label>
-          <button type="submit">Salvar</button>
+          <button type="submit" id="submit">Salvar</button>
         </form>
       </article>
     </section>
